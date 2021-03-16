@@ -8,13 +8,22 @@ import {
 import { useState, useEffect } from "react";
 
 const List = (props) => {
-	const [active, setActive] = useState("panel__name-wrap");
+	const [classNameFilter, setActive] = useState("panel__name-wrap");
+	useEffect(() => {
+		if (props.sortType !== null) {
+			if (props.sortType) {
+				setActive("panel__name-wrap asc");
+			} else {
+				setActive("panel__name-wrap des");
+			}
+		}
+	}, [props.sortType]);
 	return (
 		<div className="list__wrap">
 			<table className="table">
 				<thead>
 					<tr className="tr panel">
-						<td className={active} onClick={props.sortList}>
+						<td className={classNameFilter} onClick={props.sortList}>
 							<p>Город</p>
 							<p className="wrap__arrow arrow">
 								<FilterIcon />

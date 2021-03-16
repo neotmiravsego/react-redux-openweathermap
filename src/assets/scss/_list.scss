@@ -23,6 +23,8 @@ thead {
 
 		width: 410px;
 		padding-left: 16px;
+
+		cursor: pointer;
 	}
 	&__temp-wrap {
 		width: 160px;
@@ -115,19 +117,23 @@ tbody {
 
 	padding-left: 5px;
 	padding-top: 2px;
+	svg {
+		fill: #bdbdbd;
+	}
 	svg:last-child {
 		margin-top: 2px;
 		transform: rotate(180deg);
 	}
 }
 
-.disable {
+.asc {
 	fill: #bdbdbd;
+	svg:last-child {
+		fill: #333333;
+	}
 }
-
-.active {
-	fill: #333333;
-}
-p {
-	text-align: left;
+.des {
+	svg:first-child {
+		fill: #333333;
+	}
 }
