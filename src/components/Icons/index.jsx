@@ -1,17 +1,6 @@
-import { useState, useEffect } from "react";
-
-export const FilterIcon = (props) => {
-	const [activeState, setActiveState] = useState("disable");
-	useEffect(() => {
-		if (props.active) {
-			setActiveState("active");
-		} else {
-			setActiveState("disable");
-		}
-	});
+export const FilterIcon = () => {
 	return (
 		<svg
-			className={activeState}
 			width="7"
 			height="5"
 			viewBox="0 0 7 5"

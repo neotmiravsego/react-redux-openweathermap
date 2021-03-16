@@ -17,8 +17,8 @@ const List = (props) => {
 						<td className="panel__name-wrap" onClick={props.sortList}>
 							<th>Город</th>
 							<th className="wrap__arrow arrow">
-								<FilterIcon active={active} className="svg" />
-								<FilterIcon active={active} />
+								<FilterIcon />
+								<FilterIcon />
 							</th>
 						</td>
 						<td className="panel__temp-wrap">
