@@ -5,27 +5,27 @@ import {
 	sortListActionCreator,
 	delCityActionCreator,
 } from "../store/actions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const List = (props) => {
-	const [active, setActive] = useState(props.sortType);
+	const [active, setActive] = useState("panel__name-wrap");
 	return (
 		<div className="list__wrap">
-			<table class="table">
+			<table className="table">
 				<thead>
-					<tr class="tr panel">
-						<td className="panel__name-wrap" onClick={props.sortList}>
-							<th>Город</th>
-							<th className="wrap__arrow arrow">
+					<tr className="tr panel">
+						<td className={active} onClick={props.sortList}>
+							<p>Город</p>
+							<p className="wrap__arrow arrow">
 								<FilterIcon />
 								<FilterIcon />
-							</th>
+							</p>
 						</td>
 						<td className="panel__temp-wrap">
-							<th>Температура</th>
+							<p>Температура</p>
 						</td>
 						<td className="pannel__pressure-wrap">
-							<th>Атмосферное давление</th>
+							<p>Атмосферное давление</p>
 						</td>
 						<td></td>
 					</tr>
@@ -35,16 +35,16 @@ const List = (props) => {
 						props.list.map((el, index) => (
 							<tr className="city" key={index}>
 								<td>
-									<th className="city__name">{el.name}</th>
+									<p className="city__name">{el.name}</p>
 								</td>
 								<td>
-									<th className="city__temperature">{el.tempC}</th>
+									<p className="city__temperature">{el.tempC}</p>
 								</td>
 								<td>
-									<th className="city__pressure">{el.main.pressure} hPa</th>
+									<p className="city__pressure">{el.main.pressure} hPa</p>
 								</td>
 								<td>
-									<th className="delete__wrap">
+									<p className="delete__wrap">
 										<button
 											className="button__delete"
 											onClick={() => {
@@ -53,7 +53,7 @@ const List = (props) => {
 										>
 											Удалить
 										</button>
-									</th>
+									</p>
 								</td>
 							</tr>
 						))}
