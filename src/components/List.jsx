@@ -1,18 +1,25 @@
 import { connect } from "react-redux";
+import { FilterIcon } from "./Icons";
 import {
 	addCityActionCreator,
 	sortListActionCreator,
 	delCityActionCreator,
 } from "../store/actions";
+import { useState } from "react";
 
 const List = (props) => {
+	const [active, setActive] = useState(props.sortType);
 	return (
 		<div className="list__wrap">
 			<table class="table">
 				<thead>
 					<tr class="tr panel">
-						<td className="panel__name-wrap">
+						<td className="panel__name-wrap" onClick={props.sortList}>
 							<th>Город</th>
+							<th className="wrap__arrow arrow">
+								<FilterIcon active={active} className="svg" />
+								<FilterIcon active={active} />
+							</th>
 						</td>
 						<td className="panel__temp-wrap">
 							<th>Температура</th>
@@ -59,6 +66,7 @@ const List = (props) => {
 const mapStateToProps = (state) => {
 	return {
 		list: state.list,
+		sortType: state.sortType,
 	};
 };
 

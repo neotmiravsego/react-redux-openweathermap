@@ -19,6 +19,8 @@ thead {
 }
 .panel {
 	&__name-wrap {
+		display: flex;
+
 		width: 410px;
 		padding-left: 16px;
 	}
@@ -104,4 +106,24 @@ tbody {
 .delete__wrap {
 	float: right;
 	padding-right: 16px;
+}
+
+.arrow {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding-top: 4px;
+	svg:last-child {
+		margin-top: 2px;
+		transform: rotate(180deg);
+	}
+}
+
+.disable {
+	fill: #bdbdbd;
+}
+
+.active {
+	fill: #333333;
 }
