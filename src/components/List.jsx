@@ -88,14 +88,3 @@ const mapDispatchProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchProps)(List);
-
-// function connect() {
-// 	return class extends React.Component {
-
-// 		render() {
-// 			return <OldComponent {...propsFromConnect}></OldComponent>;
-// 		}
-// 	};
-// }
-
-// a()(3)();
